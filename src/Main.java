@@ -84,6 +84,8 @@ public class Main {
     public static void playerMove(char[][] board) {
 
         Scanner input = new Scanner(System.in);
+        int position = 0;
+        while (true) {
 
         System.out.print("Enter your position: ");
         int position = input.nextInt();
