@@ -104,7 +104,17 @@ public class Main {
             col = (position - 1) % 3;
         }
 
-        board[row][col] = 'X';
+                board[row][col] = 'X';
+                break;
+
+            } catch (InputMismatchException e) {
+
+                System.out.println("Please enter a number!");
+                input.nextLine();
+            }
+        }
+
+
     }
 
     // Create Method for Computer Move board.
