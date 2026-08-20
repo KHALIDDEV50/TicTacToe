@@ -30,8 +30,15 @@ public class Main {
         // call method for  computer Move print
         computerMove(board);
 
-        // call method for print Position For Computer Move
-        printBoard(board);
+            // call method for check for win
+            if (checkWinner(board)) {
+                // call method for print Position For Computer Move
+                printBoard(board);
+                System.out.println("Computer Wins!");
+                gameOver = true;
+                break;
+            }
+        }
 
 
     }
