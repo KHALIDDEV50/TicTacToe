@@ -18,8 +18,13 @@ public class Main {
         char[][] board = {{'1', '2', '3'},
                 {'4', '5', '6'},
                 {'7', '8', '9'}};
-        // call method print board.
-        printBoard(board);
+
+        //  Using While loop for check Winner player or computer.
+        boolean gameOver = false;
+
+        while (gameOver == false) {
+            // call method print board.
+            printBoard(board);
 
         // call method for  player Move Position
         playerMove(board);
