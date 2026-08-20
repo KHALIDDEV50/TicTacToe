@@ -1,8 +1,10 @@
+import java.util.Random;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("*---------------------*");
@@ -19,10 +21,16 @@ public class Main {
         // call method print board.
         printBoard(board);
 
-        // Enter Player Position
+        // call method for  player Move Position
+        playerMove(board);
 
+        // call method for print Position For player Move
+        printBoard(board);
 
-        // call method for print Position
+        // call method for  computer Move print
+        computerMove(board);
+
+        // call method for print Position For Computer Move
         printBoard(board);
 
 
@@ -40,6 +48,53 @@ public class Main {
         System.out.println("   "+board[2][0] + " | " + board[2][1] + " | " + board[2][2]);
 
     }
+// Create Method for Player Move board.
 
+    public static void playerMove(char[][] board) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter your position: ");
+        int position = input.nextInt();
+
+        int row = (position - 1) / 3;
+        int col = (position - 1) % 3;
+
+        while (board[row][col] == 'X' || board[row][col] == 'O') {
+
+            System.out.println("Position is not available!");
+            System.out.print("Enter another position: ");
+
+            position = input.nextInt();
+
+            row = (position - 1) / 3;
+            col = (position - 1) % 3;
+        }
+
+        board[row][col] = 'X';
+    }
+
+    // Create Method for Computer Move board.
+    static void computerMove(char[][] board) {
+
+        Random random = new Random();
+
+        int position = random.nextInt(9) + 1;
+
+        int row = (position - 1) / 3;
+        int col = (position - 1) % 3;
+
+        while (board[row][col] == 'X' || board[row][col] == 'O') {
+
+            position = random.nextInt(9) + 1;
+
+            row = (position - 1) / 3;
+            col = (position - 1) % 3;
+        }
+
+        board[row][col] = 'O';
+
+        System.out.println("Computer chose: " + position);
+    }
 
 }
