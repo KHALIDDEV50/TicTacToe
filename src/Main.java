@@ -37,7 +37,14 @@ public class Main {
                 gameOver = true;
                 break;
             }
-            // call method for  computer Move print
+
+            if (boardFull(board)) {
+                printBoard(board);
+                System.out.println("****It's a Draw!****");
+                gameOver = true;
+                break;
+            }
+
             computerMove(board);
 
             // call method for check for win
