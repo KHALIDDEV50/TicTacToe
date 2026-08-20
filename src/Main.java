@@ -24,11 +24,16 @@ public class Main {
         // call method for  player Move Position
         playerMove(board);
 
-        // call method for print Position For player Move
-        printBoard(board);
-
-        // call method for  computer Move print
-        computerMove(board);
+            // call method for check for win
+            if (checkWinner(board)) {
+                // call method for print Position For Computer Move
+                printBoard(board);
+                System.out.println("You Win!");
+                gameOver = true;
+                break;
+            }
+            // call method for  computer Move print
+            computerMove(board);
 
             // call method for check for win
             if (checkWinner(board)) {
