@@ -55,6 +55,13 @@ public class Main {
                 gameOver = true;
                 break;
             }
+
+            if (boardFull(board)) {
+                printBoard(board);
+                System.out.println("It's a Draw!");
+                gameOver = true;
+                break;
+            }
         }
 
 
