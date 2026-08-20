@@ -26,8 +26,8 @@ public class Main {
             // call method print board.
             printBoard(board);
 
-        // call method for  player Move Position
-        playerMove(board);
+            // call method for  player Move Position
+            playerMove(board);
 
             // call method for check for win
             if (checkWinner(board)) {
